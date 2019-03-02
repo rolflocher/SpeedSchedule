@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C2D524A2220B509005F1857 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C2D52492220B509005F1857 /* MenuView.xib */; };
+		4C2D524C2220B69D005F1857 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D524B2220B69D005F1857 /* MenuView.swift */; };
+		4C2F62FF222352CA0009FDE7 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F62FE222352CA0009FDE7 /* ScheduleView.swift */; };
+		4C2F6301222352DD0009FDE7 /* ScheduleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C2F6300222352DD0009FDE7 /* ScheduleView.xib */; };
 		4C4023BC21F818EC0069F61E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4023BB21F818EC0069F61E /* AppDelegate.swift */; };
 		4C4023BE21F818EC0069F61E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4023BD21F818EC0069F61E /* ViewController.swift */; };
 		4C4023C121F818EC0069F61E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C4023BF21F818EC0069F61E /* Main.storyboard */; };
@@ -14,6 +18,22 @@
 		4C4023C621F818EE0069F61E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C4023C421F818EE0069F61E /* LaunchScreen.storyboard */; };
 		4C4023D121F818EF0069F61E /* SpeedScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4023D021F818EF0069F61E /* SpeedScheduleTests.swift */; };
 		4C4023DC21F818EF0069F61E /* SpeedScheduleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4023DB21F818EF0069F61E /* SpeedScheduleUITests.swift */; };
+		4C4F807A21FA969900109434 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4F807921FA969900109434 /* NotificationCenter.framework */; };
+		4C4F807D21FA969900109434 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4F807C21FA969900109434 /* TodayViewController.swift */; };
+		4C4F808021FA969900109434 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C4F807E21FA969900109434 /* MainInterface.storyboard */; };
+		4C4F808421FA969900109434 /* SpeedScheduleExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4C4F807721FA969900109434 /* SpeedScheduleExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4C4F808A21FA987F00109434 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4023C221F818EE0069F61E /* Assets.xcassets */; };
+		4CB774682229E11C00648901 /* upcomingDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB774672229E11C00648901 /* upcomingDayView.swift */; };
+		4CB7746A2229E13000648901 /* upcomingDayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB774692229E13000648901 /* upcomingDayView.xib */; };
+		4CB7746C2229E25600648901 /* classPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB7746B2229E25600648901 /* classPreviewView.swift */; };
+		4CB7746E2229E2C300648901 /* classPreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB7746D2229E2C300648901 /* classPreviewView.xib */; };
+		4CC785A62225F887008D53E5 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 4CC785A52225F887008D53E5 /* fonts */; };
+		4CC785A72225F887008D53E5 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 4CC785A52225F887008D53E5 /* fonts */; };
+		4CC785AA2225F8D9008D53E5 /* Aller_Std_Bd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CC785A82225F8D9008D53E5 /* Aller_Std_Bd.ttf */; };
+		4CC785AB2225F8D9008D53E5 /* Aller_Std_Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CC785A92225F8D9008D53E5 /* Aller_Std_Rg.ttf */; };
+		4CC785AC2225FD31008D53E5 /* ClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9EC65622205604007E49BD /* ClassView.swift */; };
+		4CC785AF2225FD77008D53E5 /* ClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9EC65622205604007E49BD /* ClassView.swift */; };
+		4CF4A74122009F4E0054B30B /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF4A74022009F4E0054B30B /* ScheduleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,9 +51,34 @@
 			remoteGlobalIDString = 4C4023B721F818EC0069F61E;
 			remoteInfo = SpeedSchedule;
 		};
+		4C4F808221FA969900109434 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C4023B021F818EC0069F61E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C4F807621FA969900109434;
+			remoteInfo = SpeedScheduleExt;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4C4F808821FA969900109434 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4C4F808421FA969900109434 /* SpeedScheduleExt.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4C2D52492220B509005F1857 /* MenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
+		4C2D524B2220B69D005F1857 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		4C2F62FE222352CA0009FDE7 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		4C2F6300222352DD0009FDE7 /* ScheduleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleView.xib; sourceTree = "<group>"; };
 		4C4023B821F818EC0069F61E /* SpeedSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4023BB21F818EC0069F61E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C4023BD21F818EC0069F61E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +92,22 @@
 		4C4023D721F818EF0069F61E /* SpeedScheduleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedScheduleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4023DB21F818EF0069F61E /* SpeedScheduleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedScheduleUITests.swift; sourceTree = "<group>"; };
 		4C4023DD21F818EF0069F61E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C4F807721FA969900109434 /* SpeedScheduleExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SpeedScheduleExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C4F807921FA969900109434 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		4C4F807C21FA969900109434 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		4C4F807F21FA969900109434 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		4C4F808121FA969900109434 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C9EC65622205604007E49BD /* ClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassView.swift; sourceTree = "<group>"; };
+		4CB774672229E11C00648901 /* upcomingDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = upcomingDayView.swift; sourceTree = "<group>"; };
+		4CB774692229E13000648901 /* upcomingDayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = upcomingDayView.xib; sourceTree = "<group>"; };
+		4CB7746B2229E25600648901 /* classPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classPreviewView.swift; sourceTree = "<group>"; };
+		4CB7746D2229E2C300648901 /* classPreviewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = classPreviewView.xib; sourceTree = "<group>"; };
+		4CC785A52225F887008D53E5 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = SOURCE_ROOT; };
+		4CC785A82225F8D9008D53E5 /* Aller_Std_Bd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Aller_Std_Bd.ttf; path = fonts/Aller_Std_Bd.ttf; sourceTree = "<group>"; };
+		4CC785A92225F8D9008D53E5 /* Aller_Std_Rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Aller_Std_Rg.ttf; path = fonts/Aller_Std_Rg.ttf; sourceTree = "<group>"; };
+		4CC785B3222602EC008D53E5 /* SpeedScheduleExt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpeedScheduleExt.entitlements; sourceTree = "<group>"; };
+		4CC785B422260336008D53E5 /* SpeedSchedule.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpeedSchedule.entitlements; sourceTree = "<group>"; };
+		4CF4A74022009F4E0054B30B /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,15 +132,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4C4F807421FA969900109434 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C4F807A21FA969900109434 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		4C4023AF21F818EC0069F61E = {
 			isa = PBXGroup;
 			children = (
+				4CC785A82225F8D9008D53E5 /* Aller_Std_Bd.ttf */,
+				4CC785A92225F8D9008D53E5 /* Aller_Std_Rg.ttf */,
 				4C4023BA21F818EC0069F61E /* SpeedSchedule */,
 				4C4023CF21F818EF0069F61E /* SpeedScheduleTests */,
 				4C4023DA21F818EF0069F61E /* SpeedScheduleUITests */,
+				4C4F807B21FA969900109434 /* SpeedScheduleExt */,
+				4C4F807821FA969900109434 /* Frameworks */,
 				4C4023B921F818EC0069F61E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +163,7 @@
 				4C4023B821F818EC0069F61E /* SpeedSchedule.app */,
 				4C4023CC21F818EF0069F61E /* SpeedScheduleTests.xctest */,
 				4C4023D721F818EF0069F61E /* SpeedScheduleUITests.xctest */,
+				4C4F807721FA969900109434 /* SpeedScheduleExt.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,10 +171,16 @@
 		4C4023BA21F818EC0069F61E /* SpeedSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				4CC785B422260336008D53E5 /* SpeedSchedule.entitlements */,
 				4C4023BB21F818EC0069F61E /* AppDelegate.swift */,
 				4C4023BD21F818EC0069F61E /* ViewController.swift */,
+				4C2D52492220B509005F1857 /* MenuView.xib */,
+				4C2D524B2220B69D005F1857 /* MenuView.swift */,
 				4C4023BF21F818EC0069F61E /* Main.storyboard */,
+				4CF4A74022009F4E0054B30B /* ScheduleViewController.swift */,
+				4C9EC65622205604007E49BD /* ClassView.swift */,
 				4C4023C221F818EE0069F61E /* Assets.xcassets */,
+				4CC785A52225F887008D53E5 /* fonts */,
 				4C4023C421F818EE0069F61E /* LaunchScreen.storyboard */,
 				4C4023C721F818EE0069F61E /* Info.plist */,
 			);
@@ -125,6 +205,31 @@
 			path = SpeedScheduleUITests;
 			sourceTree = "<group>";
 		};
+		4C4F807821FA969900109434 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C4F807921FA969900109434 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C4F807B21FA969900109434 /* SpeedScheduleExt */ = {
+			isa = PBXGroup;
+			children = (
+				4CC785B3222602EC008D53E5 /* SpeedScheduleExt.entitlements */,
+				4C4F807C21FA969900109434 /* TodayViewController.swift */,
+				4C4F807E21FA969900109434 /* MainInterface.storyboard */,
+				4C2F6300222352DD0009FDE7 /* ScheduleView.xib */,
+				4C2F62FE222352CA0009FDE7 /* ScheduleView.swift */,
+				4C4F808121FA969900109434 /* Info.plist */,
+				4CB774672229E11C00648901 /* upcomingDayView.swift */,
+				4CB7746B2229E25600648901 /* classPreviewView.swift */,
+				4CB774692229E13000648901 /* upcomingDayView.xib */,
+				4CB7746D2229E2C300648901 /* classPreviewView.xib */,
+			);
+			path = SpeedScheduleExt;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,10 +240,12 @@
 				4C4023B421F818EC0069F61E /* Sources */,
 				4C4023B521F818EC0069F61E /* Frameworks */,
 				4C4023B621F818EC0069F61E /* Resources */,
+				4C4F808821FA969900109434 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4C4F808321FA969900109434 /* PBXTargetDependency */,
 			);
 			name = SpeedSchedule;
 			productName = SpeedSchedule;
@@ -181,6 +288,23 @@
 			productReference = 4C4023D721F818EF0069F61E /* SpeedScheduleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		4C4F807621FA969900109434 /* SpeedScheduleExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C4F808721FA969900109434 /* Build configuration list for PBXNativeTarget "SpeedScheduleExt" */;
+			buildPhases = (
+				4C4F807321FA969900109434 /* Sources */,
+				4C4F807421FA969900109434 /* Frameworks */,
+				4C4F807521FA969900109434 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpeedScheduleExt;
+			productName = SpeedScheduleExt;
+			productReference = 4C4F807721FA969900109434 /* SpeedScheduleExt.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -193,6 +317,11 @@
 				TargetAttributes = {
 					4C4023B721F818EC0069F61E = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					4C4023CB21F818EF0069F61E = {
 						CreatedOnToolsVersion = 10.1;
@@ -201,6 +330,14 @@
 					4C4023D621F818EF0069F61E = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 4C4023B721F818EC0069F61E;
+					};
+					4C4F807621FA969900109434 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -220,6 +357,7 @@
 				4C4023B721F818EC0069F61E /* SpeedSchedule */,
 				4C4023CB21F818EF0069F61E /* SpeedScheduleTests */,
 				4C4023D621F818EF0069F61E /* SpeedScheduleUITests */,
+				4C4F807621FA969900109434 /* SpeedScheduleExt */,
 			);
 		};
 /* End PBXProject section */
@@ -229,6 +367,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C2D524A2220B509005F1857 /* MenuView.xib in Resources */,
+				4CC785A62225F887008D53E5 /* fonts in Resources */,
 				4C4023C621F818EE0069F61E /* LaunchScreen.storyboard in Resources */,
 				4C4023C321F818EE0069F61E /* Assets.xcassets in Resources */,
 				4C4023C121F818EC0069F61E /* Main.storyboard in Resources */,
@@ -249,6 +389,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4C4F807521FA969900109434 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CB7746E2229E2C300648901 /* classPreviewView.xib in Resources */,
+				4CC785AA2225F8D9008D53E5 /* Aller_Std_Bd.ttf in Resources */,
+				4CC785AB2225F8D9008D53E5 /* Aller_Std_Rg.ttf in Resources */,
+				4C2F6301222352DD0009FDE7 /* ScheduleView.xib in Resources */,
+				4C4F808A21FA987F00109434 /* Assets.xcassets in Resources */,
+				4CB7746A2229E13000648901 /* upcomingDayView.xib in Resources */,
+				4C4F808021FA969900109434 /* MainInterface.storyboard in Resources */,
+				4CC785A72225F887008D53E5 /* fonts in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -256,6 +411,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C2D524C2220B69D005F1857 /* MenuView.swift in Sources */,
+				4CC785AF2225FD77008D53E5 /* ClassView.swift in Sources */,
+				4CF4A74122009F4E0054B30B /* ScheduleViewController.swift in Sources */,
 				4C4023BE21F818EC0069F61E /* ViewController.swift in Sources */,
 				4C4023BC21F818EC0069F61E /* AppDelegate.swift in Sources */,
 			);
@@ -277,6 +435,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4C4F807321FA969900109434 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C4F807D21FA969900109434 /* TodayViewController.swift in Sources */,
+				4C2F62FF222352CA0009FDE7 /* ScheduleView.swift in Sources */,
+				4CC785AC2225FD31008D53E5 /* ClassView.swift in Sources */,
+				4CB774682229E11C00648901 /* upcomingDayView.swift in Sources */,
+				4CB7746C2229E25600648901 /* classPreviewView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -289,6 +459,11 @@
 			isa = PBXTargetDependency;
 			target = 4C4023B721F818EC0069F61E /* SpeedSchedule */;
 			targetProxy = 4C4023D821F818EF0069F61E /* PBXContainerItemProxy */;
+		};
+		4C4F808321FA969900109434 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C4F807621FA969900109434 /* SpeedScheduleExt */;
+			targetProxy = 4C4F808221FA969900109434 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -307,6 +482,14 @@
 				4C4023C521F818EE0069F61E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4C4F807E21FA969900109434 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C4F807F21FA969900109434 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -431,8 +614,11 @@
 		4C4023E121F818EF0069F61E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpeedSchedule/SpeedSchedule.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UX7GPB828A;
 				INFOPLIST_FILE = SpeedSchedule/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -448,8 +634,11 @@
 		4C4023E221F818EF0069F61E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpeedSchedule/SpeedSchedule.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UX7GPB828A;
 				INFOPLIST_FILE = SpeedSchedule/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -540,6 +729,46 @@
 			};
 			name = Release;
 		};
+		4C4F808521FA969900109434 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SpeedScheduleExt/SpeedScheduleExt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UX7GPB828A;
+				INFOPLIST_FILE = SpeedScheduleExt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rolflocher.SpeedSchedule.SpeedScheduleExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4C4F808621FA969900109434 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SpeedScheduleExt/SpeedScheduleExt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UX7GPB828A;
+				INFOPLIST_FILE = SpeedScheduleExt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rolflocher.SpeedSchedule.SpeedScheduleExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -575,6 +804,15 @@
 			buildConfigurations = (
 				4C4023E721F818EF0069F61E /* Debug */,
 				4C4023E821F818EF0069F61E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C4F808721FA969900109434 /* Build configuration list for PBXNativeTarget "SpeedScheduleExt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C4F808521FA969900109434 /* Debug */,
+				4C4F808621FA969900109434 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
