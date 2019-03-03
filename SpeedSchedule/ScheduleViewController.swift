@@ -403,6 +403,8 @@ class ScheduleViewController: UIViewController, UITextFieldDelegate, ButtonTapDe
         let cancelTapPressRecognizer = UITapGestureRecognizer(target: self, action: #selector(cancelTapPressed))
         self.closeIconImageView.addGestureRecognizer(cancelTapPressRecognizer)
         self.closeIconImageView.isUserInteractionEnabled = true
+        
+        //editDeletePressed(id: <#T##Int#>)
     }
     
     override func viewDidLayoutSubviews() {

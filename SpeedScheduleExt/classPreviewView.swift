@@ -71,6 +71,9 @@ class classPreviewView: UIView {
         timeLabel.text = timeText
         roomLabel.text = "Tol 305"
         
+        contentView.removeConstraint(barRightLeft)
+        self.progressBarView.frame = CGRect(x: 0, y: 0, width: self.contentView.frame.size.width, height: self.contentView.frame.size.height)
+        
         updateProgress()
     }
     
@@ -85,7 +88,7 @@ class classPreviewView: UIView {
         print("current hour: ")
         print(hour)
         
-        if hour >= startHour {
+        if hour > startHour && (hour < endHour || hour == endHour && minutes < endMin) || hour == startHour && minutes > startMin && (hour < endHour || hour == endHour && minutes < endMin) {
             
             let count = 60*(endHour - hour) + (endMin-minutes)
             
@@ -96,22 +99,24 @@ class classPreviewView: UIView {
             print("total: ")
             print(total)
             
-            contentView.removeConstraint(barRightLeft)
-            let newX = CGFloat(contentView.frame.size.width) * CGFloat(count/total)
+            let newX = CGFloat(contentView.frame.size.width) * CGFloat(total-count)/CGFloat(total) - CGFloat(contentView.frame.size.width)
             
-            self.progressBarView.frame = CGRect(x: newX, y: 0, width: contentView.frame.size.width, height: contentView.frame.size.height)
-            
-            UIView.animate(withDuration: TimeInterval(count*60), animations: {
-                self.contentView.addConstraint(self.barRightRight)
+            print("new X: ")
+            print(newX)
+
+            UIView.animate(withDuration: 30, animations: {
+                self.progressBarView.frame = CGRect(x: newX, y: 0, width: self.contentView.frame.size.width, height: self.contentView.frame.size.height)
                 self.layoutIfNeeded()
             }, completion: { (finished: Bool) in
-                print("done animating")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
+                    self.updateProgress()
+                }
+                
             })
-            
             
         }
         else {
-            print("times dont match up")
+            print("this class is ova")
         }
     }
     

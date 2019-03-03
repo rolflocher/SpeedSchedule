@@ -66,10 +66,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         if self.extensionContext?.widgetActiveDisplayMode == .compact && firstLoad == true{
             firstLoad = false
             hideAll()
+            upcomingDayView.isHidden = false
         }
         else if firstLoad == true {
             firstLoad = false
             showAll()
+            upcomingDayView.isHidden = true
             hasPreviousData()
         }
         else {
@@ -83,10 +85,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         if activeDisplayMode == .compact {
             self.preferredContentSize = CGSize(width: 398, height: 110)
             hideAll()
+            upcomingDayView.isHidden = false
         }
         else {
             self.preferredContentSize = CGSize(width: 398, height: 450)
             showAll()
+            upcomingDayView.isHidden = true
 //            DispatchQueue.main.asyncAfter(deadline: .now()+2.0) {
 //                self.hasPreviousData()
 //            }
@@ -144,8 +148,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                     
                     drawTimeLines(classList: classListDecoded!)
                     
-                    upcomingDayView.classPreviewView.drawInfo(classInfo: classListDecoded![10])
-                    print(classListDecoded)
+                    //upcomingDayView.classPreviewView.drawInfo(classInfo: classListDecoded![12])
+                    upcomingDayView.layoutClasses(classList: classListDecoded!)
+                    //print(classListDecoded)
                     
                 }
                 else {

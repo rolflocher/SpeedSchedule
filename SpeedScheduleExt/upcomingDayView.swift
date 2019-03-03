@@ -22,6 +22,10 @@ class upcomingDayView: UIView {
     
     @IBOutlet var classPreviewView: classPreviewView!
     
+    @IBOutlet var classPreviewView1: classPreviewView!
+    
+    @IBOutlet var classPreviewView2: classPreviewView!
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,6 +40,131 @@ class upcomingDayView: UIView {
     func commonInit() {
         Bundle.main.loadNibNamed("upcomingDayView", owner: self, options: nil)
         contentView.fixInView(self)
+
+    }
+    
+    func layoutClasses(classList: [[String:Any]]) {
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        var day = calendar.component(.weekday, from: date)
+        
+        // DELETE THIS
+        day = 6
+        
+        var sentList : [[String:Any]] = []
+        
+        for classInfo in classList {
+            if (classInfo["day"] as! String) == "Monday" && day == 2 {
+                if (classInfo["endHour"] as! Int > hour || classInfo["endHour"] as! Int == hour && classInfo["endMin"] as! Int > minutes) {
+                    sentList.append(classInfo)
+                }
+            }
+            if (classInfo["day"] as! String) == "Tuesday" && day == 3 {
+                if (classInfo["endHour"] as! Int > hour || classInfo["endHour"] as! Int == hour && classInfo["endMin"] as! Int > minutes) {
+                    sentList.append(classInfo)
+                }
+            }
+            if (classInfo["day"] as! String) == "Wednesday" && day == 4 {
+                if (classInfo["endHour"] as! Int > hour || classInfo["endHour"] as! Int == hour && classInfo["endMin"] as! Int > minutes) {
+                    sentList.append(classInfo)
+                }
+            }
+            if (classInfo["day"] as! String) == "Thursday" && day == 5 {
+                if (classInfo["endHour"] as! Int > hour || classInfo["endHour"] as! Int == hour && classInfo["endMin"] as! Int > minutes) {
+                    sentList.append(classInfo)
+                }
+            }
+            if (classInfo["day"] as! String) == "Friday" && day == 6 {
+                if (classInfo["endHour"] as! Int > hour || classInfo["endHour"] as! Int == hour && classInfo["endMin"] as! Int > minutes) {
+                    sentList.append(classInfo)
+                }
+            }
+        }
+        
+        var referenceTime = [String:Any]()
+        referenceTime["startHour"] = 24
+        referenceTime["startMin"] = 30
+        
+        if sentList.count == 1 {
+            
+            var firstClass : [String:Any] = referenceTime
+            
+            for classX in sentList {
+                if (classX["startHour"] as! Int) * 60 + (classX["startMin"] as! Int) <= (firstClass["startHour"] as! Int) * 60 + (firstClass["startMin"] as! Int) {
+                    firstClass = classX
+                }
+            }
+            
+            classPreviewView.drawInfo(classInfo: firstClass)
+            classPreviewView.progressBarView.backgroundColor = UIColor.green
+            classPreviewView.contentView.backgroundColor = firstClass["color"] as? UIColor
+            
+            
+            
+        }
+        else if sentList.count == 2 {
+            
+            var firstClass : [String:Any] = referenceTime
+            var secondClass : [String:Any] = referenceTime
+            
+            for classX in sentList {
+                if (classX["startHour"] as! Int) * 60 + (classX["startMin"] as! Int) <= (firstClass["startHour"] as! Int) * 60 + (firstClass["startMin"] as! Int) {
+                    secondClass = firstClass
+                    firstClass = classX
+                }
+                else if (classX["startHour"] as! Int) * 60 + (classX["startMin"] as! Int) <= (secondClass["startHour"] as! Int) * 60 + (secondClass["startMin"] as! Int) {
+                    secondClass = classX
+                }
+            }
+            
+            classPreviewView.drawInfo(classInfo: firstClass)
+            classPreviewView1.drawInfo(classInfo: secondClass)
+            classPreviewView.progressBarView.backgroundColor = UIColor.green
+            classPreviewView.contentView.backgroundColor = firstClass["color"] as? UIColor
+            classPreviewView1.progressBarView.backgroundColor = UIColor.clear
+            classPreviewView1.contentView.backgroundColor = secondClass["color"] as? UIColor
+        }
+        else if sentList.count == 3 {
+            
+            var firstClass : [String:Any] = referenceTime
+            var secondClass : [String:Any] = referenceTime
+            var thirdClass : [String:Any] = referenceTime
+            
+            for classX in sentList {
+                if (classX["startHour"] as! Int) * 60 + (classX["startMin"] as! Int) <= (firstClass["startHour"] as! Int) * 60 + (firstClass["startMin"] as! Int) {
+                    thirdClass = secondClass
+                    secondClass = firstClass
+                    firstClass = classX
+                }
+                else if (classX["startHour"] as! Int) * 60 + (classX["startMin"] as! Int) <= (secondClass["startHour"] as! Int) * 60 + (secondClass["startMin"] as! Int) {
+                    thirdClass = secondClass
+                    secondClass = classX
+                }
+                else if (classX["startHour"] as! Int) * 60 + (classX["startMin"] as! Int) <= (thirdClass["startHour"] as! Int) * 60 + (thirdClass["startMin"] as! Int) {
+                    thirdClass = classX
+                }
+            }
+            
+            classPreviewView.drawInfo(classInfo: firstClass)
+            classPreviewView1.drawInfo(classInfo: secondClass)
+            classPreviewView2.drawInfo(classInfo: thirdClass)
+            classPreviewView.contentView.backgroundColor = firstClass["color"] as? UIColor
+            classPreviewView1.progressBarView.backgroundColor = UIColor.clear
+            classPreviewView1.contentView.backgroundColor = secondClass["color"] as? UIColor
+            classPreviewView2.progressBarView.backgroundColor = UIColor.clear
+            classPreviewView2.contentView.backgroundColor = thirdClass["color"] as? UIColor
+        }
+        else {
+            print("theres no more classes today")
+        }
+        
+        
+        
+        
+    
         
     }
     
