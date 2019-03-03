@@ -129,10 +129,18 @@
                                     <constraint firstAttribute="height" constant="24" id="xYo-eg-FS3"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rTI-x7-QYV" customClass="upcomingDayView" customModule="SpeedScheduleExt" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="vAl-7P-V0P"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="YIw-zH-he2" firstAttribute="width" secondItem="uC9-MG-8GU" secondAttribute="width" id="6z6-nB-lXr"/>
                             <constraint firstItem="p1V-4v-lbG" firstAttribute="leading" secondItem="3uo-Q6-tkt" secondAttribute="trailing" constant="2" id="76p-xn-AuU"/>
+                            <constraint firstItem="rTI-x7-QYV" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" id="7WT-8M-qL5"/>
                             <constraint firstItem="DIg-Ka-nMN" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" id="989-bL-pBF"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="Ih7-Y4-wDt" secondAttribute="bottom" id="DKt-Kq-b9H"/>
                             <constraint firstItem="p1V-4v-lbG" firstAttribute="width" secondItem="uC9-MG-8GU" secondAttribute="width" id="Fcx-QB-0u8"/>
@@ -156,6 +164,8 @@
                             <constraint firstItem="Ih7-Y4-wDt" firstAttribute="top" secondItem="DIg-Ka-nMN" secondAttribute="bottom" constant="2" id="mVX-dM-a70"/>
                             <constraint firstItem="3uo-Q6-tkt" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" id="miU-hK-SOD"/>
                             <constraint firstItem="OET-le-YbS" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="26" id="mjR-N5-LpR"/>
+                            <constraint firstAttribute="trailing" secondItem="rTI-x7-QYV" secondAttribute="trailing" id="msr-wl-jS1"/>
+                            <constraint firstItem="rTI-x7-QYV" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="n0d-eo-BOJ"/>
                             <constraint firstItem="3uo-Q6-tkt" firstAttribute="leading" secondItem="DIg-Ka-nMN" secondAttribute="trailing" constant="2" id="qua-Jn-VeG"/>
                             <constraint firstItem="YIw-zH-he2" firstAttribute="leading" secondItem="p1V-4v-lbG" secondAttribute="trailing" constant="2" id="xqA-tp-NYc"/>
                         </constraints>
@@ -171,6 +181,7 @@
                         <outlet property="thursdayView" destination="p1V-4v-lbG" id="4HO-FU-p0l"/>
                         <outlet property="timeView" destination="OET-le-YbS" id="VJl-iq-rdA"/>
                         <outlet property="tuesdayView" destination="DIg-Ka-nMN" id="byF-OX-J1N"/>
+                        <outlet property="upcomingDayView" destination="rTI-x7-QYV" id="eUK-9L-RyN"/>
                         <outlet property="wednesdayView" destination="3uo-Q6-tkt" id="Y9Q-gH-b9i"/>
                     </connections>
                 </viewController>

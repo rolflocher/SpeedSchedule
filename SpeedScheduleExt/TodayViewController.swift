@@ -25,6 +25,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet var fridayView: UIView!
     
+    @IBOutlet var upcomingDayView: upcomingDayView!
+    
     
     var startHour = 8
     var startMin = 30
@@ -36,6 +38,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
         
         self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+        
+        
         
 //        if self.extensionContext?.widgetActiveDisplayMode == .compact {
 //            self.scheduleView.isHidden = true
@@ -140,6 +144,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                     
                     drawTimeLines(classList: classListDecoded!)
                     
+                    upcomingDayView.classPreviewView.drawInfo(classInfo: classListDecoded![10])
+                    print(classListDecoded)
                     
                 }
                 else {

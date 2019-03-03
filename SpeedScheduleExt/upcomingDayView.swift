@@ -20,6 +20,9 @@ class upcomingDayView: UIView {
 
     @IBOutlet var contentView: UIView!
     
+    @IBOutlet var classPreviewView: classPreviewView!
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -33,6 +36,7 @@ class upcomingDayView: UIView {
     func commonInit() {
         Bundle.main.loadNibNamed("upcomingDayView", owner: self, options: nil)
         contentView.fixInView(self)
+        
     }
     
     
