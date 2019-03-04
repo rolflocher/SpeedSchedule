@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CompactViewDelegate : class {
+    func updateCompactClasses()
+}
+
 class classPreviewView: UIView {
 
     /*
@@ -21,6 +25,8 @@ class classPreviewView: UIView {
     var startMin = 30
     var endHour = 9
     var endMin = 20
+    
+    weak var compactViewDelegate : CompactViewDelegate?
     
     var barRightLeft = NSLayoutConstraint()
     var barRightRight = NSLayoutConstraint()
@@ -71,7 +77,7 @@ class classPreviewView: UIView {
         timeLabel.text = timeText
         roomLabel.text = "Tol 305"
         
-        contentView.removeConstraint(barRightLeft)
+        
         self.progressBarView.frame = CGRect(x: 0, y: 0, width: self.contentView.frame.size.width, height: self.contentView.frame.size.height)
         
         updateProgress()
@@ -87,8 +93,14 @@ class classPreviewView: UIView {
         print(startHour)
         print("current hour: ")
         print(hour)
+        print("saved class end hour: ")
+        print(endHour)
         
         if hour > startHour && (hour < endHour || hour == endHour && minutes < endMin) || hour == startHour && minutes > startMin && (hour < endHour || hour == endHour && minutes < endMin) {
+            
+            contentView.removeConstraint(barRightLeft)
+            
+            progressBarView.backgroundColor = UIColor.green
             
             let count = 60*(endHour - hour) + (endMin-minutes)
             
@@ -115,8 +127,16 @@ class classPreviewView: UIView {
             })
             
         }
+        else if hour < startHour || hour == startHour && minutes < startMin {
+            progressBarView.backgroundColor = UIColor.clear
+            DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
+                self.updateProgress()
+            }
+        }
         else {
             print("this class is ova")
+            contentView.addConstraint(barRightLeft)
+            compactViewDelegate?.updateCompactClasses()
         }
     }
     

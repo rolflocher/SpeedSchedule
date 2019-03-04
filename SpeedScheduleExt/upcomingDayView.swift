@@ -8,7 +8,16 @@
 
 import UIKit
 
-class upcomingDayView: UIView {
+class upcomingDayView: UIView, CompactViewDelegate {
+    
+    var localClassList = [[String:Any]]()
+    
+    func updateCompactClasses() {
+        print("trying to relayout the classes cuz that one just ended")
+        layoutClasses(classList: localClassList)
+        //self.layoutIfNeeded()
+    }
+    
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -40,19 +49,21 @@ class upcomingDayView: UIView {
     func commonInit() {
         Bundle.main.loadNibNamed("upcomingDayView", owner: self, options: nil)
         contentView.fixInView(self)
-
+        classPreviewView.compactViewDelegate = self
     }
     
     func layoutClasses(classList: [[String:Any]]) {
+        
+        localClassList = classList //got an exc bad acesss termination here once sry
         
         let date = Date()
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
         let minutes = calendar.component(.minute, from: date)
-        var day = calendar.component(.weekday, from: date)
+        var day = calendar.component(.weekday, from: date) // disregard warning until release
         
         // DELETE THIS
-        day = 6
+//        day = 6 // commenting is like deleting
         
         var sentList : [[String:Any]] = []
         
@@ -101,7 +112,20 @@ class upcomingDayView: UIView {
             classPreviewView.drawInfo(classInfo: firstClass)
             classPreviewView.progressBarView.backgroundColor = UIColor.green
             classPreviewView.contentView.backgroundColor = firstClass["color"] as? UIColor
+            classPreviewView1.progressBarView.backgroundColor = UIColor.clear
+            classPreviewView2.progressBarView.backgroundColor = UIColor.clear
             
+            classPreviewView1.contentView.backgroundColor = UIColor.clear
+            classPreviewView1.nameLabel.text = ""
+            classPreviewView1.timeLabel.text = ""
+            classPreviewView1.countLabel.text = ""
+            classPreviewView1.roomLabel.text = ""
+            
+            classPreviewView2.contentView.backgroundColor = UIColor.clear
+            classPreviewView2.nameLabel.text = ""
+            classPreviewView2.timeLabel.text = ""
+            classPreviewView2.countLabel.text = ""
+            classPreviewView2.roomLabel.text = ""
             
             
         }
@@ -126,6 +150,13 @@ class upcomingDayView: UIView {
             classPreviewView.contentView.backgroundColor = firstClass["color"] as? UIColor
             classPreviewView1.progressBarView.backgroundColor = UIColor.clear
             classPreviewView1.contentView.backgroundColor = secondClass["color"] as? UIColor
+            classPreviewView2.progressBarView.backgroundColor = UIColor.clear
+            
+            classPreviewView2.contentView.backgroundColor = UIColor.clear
+            classPreviewView2.nameLabel.text = ""
+            classPreviewView2.timeLabel.text = ""
+            classPreviewView2.countLabel.text = ""
+            classPreviewView2.roomLabel.text = ""
         }
         else if sentList.count == 3 {
             
