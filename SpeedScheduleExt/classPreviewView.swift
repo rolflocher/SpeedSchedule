@@ -137,6 +137,8 @@ class classPreviewView: UIView {
             print("this class is ova")
             contentView.addConstraint(barRightLeft)
             compactViewDelegate?.updateCompactClasses()
+            // this was to change the coomit
+            print("dpes this commiot")
         }
     }
     
