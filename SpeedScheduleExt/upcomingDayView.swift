@@ -67,6 +67,9 @@ class upcomingDayView: UIView, CompactViewDelegate {
         
         var sentList : [[String:Any]] = []
         
+        // this was to change the coomit
+        print("dpes this commiot")
+        
         for classInfo in classList {
             if (classInfo["day"] as! String) == "Monday" && day == 2 {
                 if (classInfo["endHour"] as! Int > hour || classInfo["endHour"] as! Int == hour && classInfo["endMin"] as! Int > minutes) {
