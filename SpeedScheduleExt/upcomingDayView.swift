@@ -196,6 +196,9 @@ class upcomingDayView: UIView, CompactViewDelegate {
         }
         else {
             print("theres no more classes today")
+            classPreviewView.backgroundColor = UIColor.clear
+            classPreviewView1.contentView.backgroundColor = UIColor.clear
+            classPreviewView2.contentView.backgroundColor = UIColor.clear
         }
         
         

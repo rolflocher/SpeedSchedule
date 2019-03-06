@@ -25,27 +25,27 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1I-Ai-o0Q" customClass="classPreviewView" customModule="SpeedScheduleExt" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="34"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="MMN-36-CTT"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kuo-Or-aLl" customClass="classPreviewView" customModule="SpeedScheduleExt" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="76" width="375" height="34"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="fEY-3j-ApB"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52h-cb-rhk" customClass="classPreviewView" customModule="SpeedScheduleExt" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="38" width="375" height="34"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="Nzc-NJ-deB"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Kuo-Or-aLl" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="5fy-kp-onP"/>
                 <constraint firstItem="Kuo-Or-aLl" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="7oK-UF-36y"/>

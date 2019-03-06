@@ -43,6 +43,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
         self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         deviceSize = UIScreen.main.bounds.height
+        print("Device height: \(deviceSize)")
         if self.extensionContext?.widgetActiveDisplayMode == .compact {
             hideAll()
             upcomingDayView.isHidden = false
@@ -54,17 +55,20 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         if hasPreviousData() {
             upcomingDayView.layoutClasses(classList:classListGlobal)
             switch deviceSize {
-            case 667.0 :
-                print("unwritten size \(deviceSize)")
-            case 736.0 :
+            case 667.0 : // 8
+                scheduleView.height = 424
+                scheduleView.width = 63
+            case 736.0 : // 8P, 7P
                 scheduleView.height = 424
                 scheduleView.width = 70.5
-            case 568.0 :
-                print("unwritten size \(deviceSize)")
-            case 812.0 :
-                print("unwritten size \(deviceSize)")
-            case 896.0 :
-                scheduleView.height = 400
+            case 568.0 : //SE
+                scheduleView.height = 424
+                scheduleView.width = 52
+            case 812.0 : //XS, X
+                scheduleView.height = 424
+                scheduleView.width = 63
+            case 896.0 : //XS Max, XR
+                scheduleView.height = 424
                 scheduleView.width = 70.5
             default :
                 print("unrecognized size")
@@ -260,47 +264,51 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         var usableHeight = CGFloat()
         switch deviceSize {
         case 667.0 :
-            print("unwritten size")
+            usableHeight = 424.0
         case 736.0 :
             usableHeight = 424.0
         case 568.0 :
-            print("unwritten size")
+            usableHeight = 424.0
         case 812.0 :
-            print("unwritten size")
+            usableHeight = 424.0
         case 896.0 :
             usableHeight = 424.0
         default :
             print("unrecognized size")
         }
         
-        startHour = 24
+//        startHour = 24
+//        startMin = 0
+//        endHour = 0
+//        endMin = 0
+        startHour = 8
         startMin = 0
-        endHour = 0
+        endHour = 20
         endMin = 0
         
         self.timeView.layer.sublayers?.forEach { $0.removeFromSuperlayer() }
         
-        for classInfo in classList {
-            if (classInfo["startHour"] as! Int) < startHour {
-                if (classInfo["startMin"] as! Int) < startMin {
-                    self.startMin = (classInfo["startMin"] as! Int)
-                }
-                self.startHour = (classInfo["startHour"] as! Int)
-            }
-            if (classInfo["endHour"] as! Int) > endHour {
-                if (classInfo["endMin"] as! Int) < endMin {
-                    self.endMin = (classInfo["endMin"] as! Int)
-                }
-                self.endHour = (classInfo["endHour"] as! Int)
-            }
-        }
-        
-        if self.startMin < 30 {
-            self.startMin = 0
-        }
-        if self.endMin > 0 {
-            self.endMin = 30
-        }
+//        for classInfo in classList {
+//            if (classInfo["startHour"] as! Int) < startHour {
+//                if (classInfo["startMin"] as! Int) < startMin {
+//                    self.startMin = (classInfo["startMin"] as! Int)
+//                }
+//                self.startHour = (classInfo["startHour"] as! Int)
+//            }
+//            if (classInfo["endHour"] as! Int) > endHour {
+//                if (classInfo["endMin"] as! Int) < endMin {
+//                    self.endMin = (classInfo["endMin"] as! Int)
+//                }
+//                self.endHour = (classInfo["endHour"] as! Int)
+//            }
+//        }
+//
+//        if self.startMin < 30 {
+//            self.startMin = 0
+//        }
+//        if self.endMin > 0 {
+//            self.endMin = 30
+//        }
         
         var startOffset = 2 * (self.startHour-8)
         startOffset += (self.startMin-30) / 30
@@ -380,20 +388,20 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 print("f")
             }
             textLayer.alignmentMode = .right
-            if (deviceSize == 667.0) { //unknown
-                textLayer.position = CGPoint(x:2,y:height+220)
+            if (deviceSize == 667.0) {
+                textLayer.position = CGPoint(x:17,y:height+169)
             }
             else if (deviceSize == 736.0) {
-                textLayer.position = CGPoint(x:15,y:height+168)
+                textLayer.position = CGPoint(x:17,y:height+168)
             }
-            else if (deviceSize == 568.0) { //unknown
-                textLayer.position = CGPoint(x:7,y:height+173)
+            else if (deviceSize == 568.0) {
+                textLayer.position = CGPoint(x:17,y:height+169)
             }
-            else if (deviceSize == 812.0) { //unknown
-                textLayer.position = CGPoint(x:2,y:height+261)
+            else if (deviceSize == 812.0) {
+                textLayer.position = CGPoint(x:17,y:height+169)
             }
             else if (deviceSize == 896.0) {
-                textLayer.position = CGPoint(x:15,y:height+168)
+                textLayer.position = CGPoint(x:17,y:height+169)//8
             }
             else {
                 textLayer.position = CGPoint(x:-2,y:height+301)
