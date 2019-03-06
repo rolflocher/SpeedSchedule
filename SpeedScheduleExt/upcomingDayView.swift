@@ -60,7 +60,7 @@ class upcomingDayView: UIView, CompactViewDelegate {
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
         let minutes = calendar.component(.minute, from: date)
-        var day = calendar.component(.weekday, from: date) // disregard warning until release
+        let day = calendar.component(.weekday, from: date) // disregard warning until release
         
         // DELETE THIS
 //        day = 6 // commenting is like deleting
@@ -113,6 +113,7 @@ class upcomingDayView: UIView, CompactViewDelegate {
             }
             
             classPreviewView.drawInfo(classInfo: firstClass)
+            classPreviewView.updateProgress()
             classPreviewView.progressBarView.backgroundColor = UIColor.green
             classPreviewView.contentView.backgroundColor = firstClass["color"] as? UIColor
             classPreviewView1.progressBarView.backgroundColor = UIColor.clear
@@ -149,6 +150,7 @@ class upcomingDayView: UIView, CompactViewDelegate {
             
             classPreviewView.drawInfo(classInfo: firstClass)
             classPreviewView1.drawInfo(classInfo: secondClass)
+            classPreviewView.updateProgress()
             classPreviewView.progressBarView.backgroundColor = UIColor.green
             classPreviewView.contentView.backgroundColor = firstClass["color"] as? UIColor
             classPreviewView1.progressBarView.backgroundColor = UIColor.clear
@@ -161,7 +163,7 @@ class upcomingDayView: UIView, CompactViewDelegate {
             classPreviewView2.countLabel.text = ""
             classPreviewView2.roomLabel.text = ""
         }
-        else if sentList.count == 3 {
+        else if sentList.count >= 3 {
             
             var firstClass : [String:Any] = referenceTime
             var secondClass : [String:Any] = referenceTime
@@ -185,6 +187,7 @@ class upcomingDayView: UIView, CompactViewDelegate {
             classPreviewView.drawInfo(classInfo: firstClass)
             classPreviewView1.drawInfo(classInfo: secondClass)
             classPreviewView2.drawInfo(classInfo: thirdClass)
+            classPreviewView.updateProgress()
             classPreviewView.contentView.backgroundColor = firstClass["color"] as? UIColor
             classPreviewView1.progressBarView.backgroundColor = UIColor.clear
             classPreviewView1.contentView.backgroundColor = secondClass["color"] as? UIColor

@@ -30,6 +30,7 @@ class ScheduleView: UIView {
     var endMin = 30
     
     var height : CGFloat = 400.0
+    var width : CGFloat = 74.0
     
     
     override init(frame: CGRect) {
@@ -65,6 +66,9 @@ class ScheduleView: UIView {
             view.removeFromSuperview()
         }
         
+//        print("scheduleview thinks width is \(self.mondayLongView.frame.width)")
+        print("scheduleview thinks width is \(width)")
+        
         for classInfo in classList {
             
             let classStartHour = classInfo["startHour"] as! Int
@@ -79,7 +83,8 @@ class ScheduleView: UIView {
             let classEndPixel = CGFloat(self.height) * (CGFloat(dayOffset-classEndOffset)/CGFloat(dayOffset)) // classEndOffset)/CGFloat(dayOffset+1))
             let newHeight = classEndPixel-classStartPixel
             
-            let classFrame = ClassView(frame: CGRect(x: 0,y: classStartPixel, width: self.mondayLongView.frame.size.width,height: newHeight))
+//            let classFrame = ClassView(frame: CGRect(x: 0,y: classStartPixel, width: self.mondayLongView.frame.size.width,height: newHeight))
+            let classFrame = ClassView(frame: CGRect(x: 0,y: classStartPixel, width: width,height: newHeight))
             classFrame.backgroundColor = classInfo["color"] as? UIColor
             classFrame.nameLabel.text = classInfo["name"] as? String
             classFrame.id = classInfo["id"] as! Int
@@ -100,6 +105,13 @@ class ScheduleView: UIView {
                 self.fridayLongView.addSubview(classFrame)
             }
         }
+        for views in mondayLongView.subviews {
+            //let equalWidthConstraint = NSLayoutConstraint(item: views, attribute: .width, relatedBy: .equal, toItem: mondayLongView, attribute: .width, multiplier: 1, constant: 0)
+            //mondayLongView.addConstraint(equalWidthConstraint)
+            //views.translatesAutoresizingMaskIntoConstraints = true
+            views.widthAnchor.constraint(equalTo: mondayLongView.widthAnchor)
+            mondayLongView.layoutIfNeeded()
+        }
     }
     
     func drawLines () {
@@ -111,8 +123,7 @@ class ScheduleView: UIView {
         
         var numSegments = 2 * (self.endHour - self.startHour)
         numSegments += (self.endMin - self.startMin) / 30
-        print("in draw lines")
-        print(self.frame.height)
+        print("scheduleview drawing lines, thinks height is \(self.height)")
         
         for x in 1...numSegments+1 {
             if x % 2 == 1 {
@@ -120,10 +131,10 @@ class ScheduleView: UIView {
                 let height = CGFloat((self.height/CGFloat(numSegments+1)) * CGFloat(x))
                 let width = self.mondayLongView.frame.size.width+30
                 
-                if x == 1 {
-                    print("lines: ")
-                    print(height)
-                }
+//                if x == 1 {
+//                    print("lines: ")
+//                    print(height)
+//                }
                 
                 let path = UIBezierPath()
                 path.move(to: CGPoint(x: 0, y: height))

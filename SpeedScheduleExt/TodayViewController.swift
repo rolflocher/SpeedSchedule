@@ -33,52 +33,128 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     var endHour = 20
     var endMin = 30
     var firstLoad = true
+    var loadedIntoCompact = false
+    var drewLines = false
+    var classListGlobal = [[String:Any]]()
+    
+    var deviceSize = CGFloat()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
-        
-        
-        
-//        if self.extensionContext?.widgetActiveDisplayMode == .compact {
-//            self.scheduleView.isHidden = true
-//        }
-//        else {
-//            self.scheduleView.isHidden = false
-//            hasPreviousData()
-//            firstLoad = false
-//        }
-        
-        
-//        if self.extensionContext?.widgetActiveDisplayMode == .compact {
-//
-//        }
-//        else {
-//            hasPreviousData()
-//        }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        NSLayoutConstraint.activate(
-            [scheduleView.widthAnchor.constraint(equalToConstant: self.view.frame.size.width - 7)])
-        
-        if self.extensionContext?.widgetActiveDisplayMode == .compact && firstLoad == true{
-            firstLoad = false
+        deviceSize = UIScreen.main.bounds.height
+        if self.extensionContext?.widgetActiveDisplayMode == .compact {
             hideAll()
             upcomingDayView.isHidden = false
         }
-        else if firstLoad == true {
-            firstLoad = false
+        else {
             showAll()
             upcomingDayView.isHidden = true
-            hasPreviousData()
         }
-        else {
-            hasPreviousData()
+        if hasPreviousData() {
+            upcomingDayView.layoutClasses(classList:classListGlobal)
+            switch deviceSize {
+            case 667.0 :
+                print("unwritten size")
+            case 736.0 :
+                print("unwritten size")
+            case 568.0 :
+                print("unwritten size")
+            case 812.0 :
+                print("unwritten size")
+            case 896.0 :
+                scheduleView.height = 400
+                scheduleView.width = 70.5
+            default :
+                print("unrecognized size")
+            }
+            self.scheduleView.drawLines()
+            self.scheduleView.drawClasses(classList: classListGlobal)
+            // NEXT incorporate time labels into scheduleview heirarchy
+            drawTimeLines(classList: classListGlobal)
         }
-        
     }
+    
+//    override func viewDidLayoutSubviews() {
+//
+////        print("current height: \(self.timeView.frame.height)")
+////        print("current width: \(self.scheduleView.mondayLongView.frame.width)")
+//
+//        if firstLoad {
+//            if self.extensionContext?.widgetActiveDisplayMode == .compact {
+//                if self.scheduleView.mondayLongView.frame.width != 74.0 {
+//                    hideAll()
+//                    upcomingDayView.isHidden = false
+//                    if hasPreviousData() {
+//                        //upcomingDayView.layoutClasses(classList: classListGlobal)
+//
+//                        // debug fun
+//                        //var temp = [[String:Any]]()
+////                        var tempClass = [String:Any]()
+////                        tempClass["name"] = "Coded Test Class"
+////                        tempClass["color"] = UIColor.cyan
+////                        tempClass["startHour"] = 0
+////                        tempClass["endHour"] = 0
+////                        tempClass["startMin"] = 40
+////                        tempClass["endMin"] = 44
+////                        tempClass["day"] = "Wednesday"
+////                        classListGlobal.append(tempClass)
+//                        upcomingDayView.layoutClasses(classList:classListGlobal)
+//                    }
+//                    firstLoad = false
+//                    loadedIntoCompact = true
+//                }
+//                else {
+//                    self.view.setNeedsLayout()
+//                }
+//            }
+//            else {
+//                if self.scheduleView.mondayLongView.frame.width != 74.0 && self.timeView.frame.height != 84.0 {
+//                    showAll()
+//                    upcomingDayView.isHidden = true
+//                    if hasPreviousData() {
+//                        if !drewLines {
+//                            self.scheduleView.drawLines()
+//                            self.scheduleView.drawClasses(classList: classListGlobal)
+//                            drawTimeLines(classList: classListGlobal)
+//                            drewLines = true
+//                        }
+//                    }
+//                    firstLoad = false
+//                }
+//                else {
+//                    self.view.setNeedsLayout()
+//                }
+//            }
+//        }
+//
+////        if self.scheduleView.mondayLongView.frame.width != 74.0 && self.timeView.frame.height != 84.0 {
+////            if firstLoad {
+////                if self.extensionContext?.widgetActiveDisplayMode == .compact {
+////                    hideAll()
+////                    //NSLayoutConstraint.activate(
+////                    //    [scheduleView.widthAnchor.constraint(equalToConstant: self.view.frame.size.width - 7)])
+////                    upcomingDayView.isHidden = false
+////                    hasPreviousData()
+////                    firstLoad = false
+////                }
+////                else {
+////
+////                    showAll()
+////                    //NSLayoutConstraint.activate(
+////                    //    [scheduleView.widthAnchor.constraint(equalToConstant: self.view.frame.size.width - 7)])
+////                    upcomingDayView.isHidden = true
+////                    hasPreviousData()
+////                    firstLoad = false
+////                }
+////            }
+////        }
+////        else {
+////            print("not layed out fully...")
+////            self.view.setNeedsLayout()
+////        }
+//
+//    }
     
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
@@ -86,16 +162,29 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             self.preferredContentSize = CGSize(width: 398, height: 110)
             hideAll()
             upcomingDayView.isHidden = false
+            
+            if !firstLoad {
+                if hasPreviousData() {
+                    upcomingDayView.layoutClasses(classList: classListGlobal)
+                }
+            }
+            
         }
         else {
             self.preferredContentSize = CGSize(width: 398, height: 450)
             showAll()
             upcomingDayView.isHidden = true
-//            DispatchQueue.main.asyncAfter(deadline: .now()+2.0) {
-//                self.hasPreviousData()
-//            }
-            //hasPreviousData()
-            
+            if !firstLoad {
+                if hasPreviousData() {
+                    if !drewLines {
+                        //self.extensionContext?.
+                        self.scheduleView.drawLines()
+                        self.scheduleView.drawClasses(classList: classListGlobal)
+                        drawTimeLines(classList: classListGlobal)
+                        drewLines = true
+                    }
+                }
+            }
         }
     }
     
@@ -133,34 +222,55 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
     }
     
-    func hasPreviousData() {
-        if self.extensionContext?.widgetActiveDisplayMode == .expanded {
-            if let userDefaults = UserDefaults(suiteName: "group.rlocher.schedule") {
+    func hasPreviousData() -> Bool {
+        if let userDefaults = UserDefaults(suiteName: "group.rlocher.schedule") {
+            
+            if let classListData = userDefaults.object(forKey: "classList") as? Data {
+                let classListDecoded = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(classListData) as! [[String:Any]]
                 
-                if let classListData = userDefaults.object(forKey: "classList") as? Data {
-                    let classListDecoded = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(classListData) as! [[String:Any]]
-                    
-                    self.scheduleView.height = self.preferredContentSize.height - 26.0
-                    self.scheduleView.drawLines()
-                    self.scheduleView.drawClasses(classList: classListDecoded!)
-                    print("in haspreviousdata")
-                    print(self.scheduleView.frame.height)
-                    
-                    drawTimeLines(classList: classListDecoded!)
-                    
-                    //upcomingDayView.classPreviewView.drawInfo(classInfo: classListDecoded![12])
-                    upcomingDayView.layoutClasses(classList: classListDecoded!)
-                    //print(classListDecoded)
-                    
-                }
-                else {
-                    print("couldn't find classList")
-                }
+                classListGlobal = classListDecoded!
+                return true
+                //self.scheduleView.height = self.preferredContentSize.height - 26.0
+                
+//                if !loadedIntoCompact {
+//                    self.scheduleView.drawLines()
+//                    self.scheduleView.drawClasses(classList: classListDecoded!)
+//                    drawTimeLines(classList: classListDecoded!)
+//                    print("in haspreviousdata, finished expanded drawing")
+//                }
+//
+//
+//                upcomingDayView.layoutClasses(classList: classListDecoded!)
+                
+            }
+            else {
+                print("couldn't find classList")
+                return false
             }
         }
+        else {
+            return false
+        }
+        
     }
     
     func drawTimeLines(classList: [[String:Any]]) {
+        
+        var usableHeight = CGFloat()
+        switch deviceSize {
+        case 667.0 :
+            print("unwritten size")
+        case 736.0 :
+            print("unwritten size")
+        case 568.0 :
+            print("unwritten size")
+        case 812.0 :
+            print("unwritten size")
+        case 896.0 :
+            usableHeight = 424.0
+        default :
+            print("unrecognized size")
+        }
         
         startHour = 24
         startMin = 0
@@ -199,14 +309,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         for x in 1...numSegments+1 {
             
-            let height = CGFloat((self.timeView.frame.size.height/CGFloat(numSegments+1)) * CGFloat(x))
+            //let height = CGFloat((self.timeView.frame.size.height/CGFloat(numSegments+1)) * CGFloat(x))
+            let height = CGFloat((usableHeight/CGFloat(numSegments+1)) * CGFloat(x))
             
             if x == 1 {
-                print(height)
+                print("time label drawer thinks height is \(usableHeight)")
             }
             
             let textLayer = CATextLayer()
-            textLayer.frame = self.timeView.frame
+            textLayer.frame = self.timeView.frame // may need to hardcode
             textLayer.backgroundColor = UIColor.clear.cgColor
             textLayer.foregroundColor = #colorLiteral(red: 0.2041128576, green: 0.2041538656, blue: 0.2041074634, alpha: 0.9130996919)
             textLayer.fontSize = 14
@@ -268,23 +379,23 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 print("f")
             }
             textLayer.alignmentMode = .right
-            if (self.view.frame.size.height == 667.0) {
+            if (deviceSize == 667.0) {
                 textLayer.position = CGPoint(x:2,y:height+220)
             }
-            else if (self.view.frame.size.height == 736.0) {
+            else if (deviceSize == 736.0) {
                 textLayer.position = CGPoint(x:-3,y:height+253)
             }
-            else if (self.view.frame.size.height == 568.0) {
+            else if (deviceSize == 568.0) {
                 textLayer.position = CGPoint(x:7,y:height+173)
             }
-            else if (self.view.frame.size.height == 812.0) {
+            else if (deviceSize == 812.0) {
                 textLayer.position = CGPoint(x:2,y:height+261)
             }
-            else if (self.view.frame.size.height == 896.0) {
-                textLayer.position = CGPoint(x:-2,y:height+301)
+            else if (deviceSize == 896.0) {
+                textLayer.position = CGPoint(x:15,y:height+168)
             }
             else {
-                textLayer.position = CGPoint(x:15,y:height+168)
+                textLayer.position = CGPoint(x:-2,y:height+301)
                 print("default text position used, unknown device height")
             }
             

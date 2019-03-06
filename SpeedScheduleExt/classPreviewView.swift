@@ -26,10 +26,16 @@ class classPreviewView: UIView {
     var endHour = 9
     var endMin = 20
     
+    var timer = Timer()
+    var timerIsRunning = false
+    var startTime = 100.0
+    var timerCount = 60.0
+    
+    var firstLoad = true
+    
     weak var compactViewDelegate : CompactViewDelegate?
     
     var barRightLeft = NSLayoutConstraint()
-    var barRightRight = NSLayoutConstraint()
     
     @IBOutlet var contentView: UIView!
     
@@ -42,6 +48,8 @@ class classPreviewView: UIView {
     @IBOutlet var roomLabel: UILabel!
     
     @IBOutlet var progressBarView: UIView!
+    
+    @IBOutlet var hideProgressConstraint: NSLayoutConstraint!
     
     
     override init(frame: CGRect) {
@@ -57,9 +65,13 @@ class classPreviewView: UIView {
     func commonInit() {
         Bundle.main.loadNibNamed("classPreviewView", owner: self, options: nil)
         contentView.fixInView(self)
-        barRightLeft = NSLayoutConstraint(item: progressBarView, attribute: .trailing, relatedBy: .equal, toItem: contentView, attribute: .leading, multiplier: 1.0, constant: 0)
-        barRightRight = NSLayoutConstraint(item: progressBarView, attribute: .trailing, relatedBy: .equal, toItem: contentView, attribute: .trailing, multiplier: 1.0, constant: 0)
-        contentView.addConstraint(barRightLeft)
+        if firstLoad {
+//            barRightLeft = NSLayoutConstraint(item: progressBarView, attribute: .trailing, relatedBy: .equal, toItem: contentView, attribute: .leading, multiplier: 1.0, constant: 0)
+//            contentView.addConstraint(barRightLeft)
+            print("common init called, hiding constraint added")
+            countLabel.text = "30"
+            firstLoad = false
+        }
     }
     
     func drawInfo(classInfo : [String:Any]) {
@@ -78,9 +90,9 @@ class classPreviewView: UIView {
         roomLabel.text = "Tol 305"
         
         
-        self.progressBarView.frame = CGRect(x: 0, y: 0, width: self.contentView.frame.size.width, height: self.contentView.frame.size.height)
         
-        updateProgress()
+//        contentView.removeConstraint(barRightLeft)
+        //self.progressBarView.frame = CGRect(x: 0, y: 0, width: self.contentView.frame.size.width, height: self.contentView.frame.size.height)
     }
     
     func updateProgress() {
@@ -88,39 +100,45 @@ class classPreviewView: UIView {
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
         let minutes = calendar.component(.minute, from: date)
+        let seconds = calendar.component(.second, from: date)
         
-        print("saved class start hour: ")
-        print(startHour)
-        print("current hour: ")
-        print(hour)
-        print("saved class end hour: ")
-        print(endHour)
-        
-        if hour > startHour && (hour < endHour || hour == endHour && minutes < endMin) || hour == startHour && minutes > startMin && (hour < endHour || hour == endHour && minutes < endMin) {
+        if hour > startHour && (hour < endHour || hour == endHour && minutes <= endMin) || hour == startHour && minutes >= startMin && (hour < endHour || hour == endHour && minutes < endMin) {
             
-            contentView.removeConstraint(barRightLeft)
+//            for x in contentView.constraints {
+//                if x == barRightLeft {
+//                    contentView.removeConstraint(barRightLeft)
+//                }
+//
+//            }
             
-            progressBarView.backgroundColor = UIColor.green
+            if progressBarView.backgroundColor != UIColor.green {
+                progressBarView.backgroundColor = UIColor.green
+            }
             
-            let count = 60*(endHour - hour) + (endMin-minutes)
             
-            self.countLabel.text = String(count)
             
-            let total = 60*(endHour-startHour) + (endMin-startMin)
+            let count = 60*60*(endHour - hour) + 60*(endMin-minutes) - seconds
             
-            print("total: ")
-            print(total)
+            let total = 60*60*(endHour-startHour) + 60*(endMin-startMin)
             
             let newX = CGFloat(contentView.frame.size.width) * CGFloat(total-count)/CGFloat(total) - CGFloat(contentView.frame.size.width)
             
-            print("new X: ")
-            print(newX)
+            //print("new minutes: \(minutes) new seconds: \(seconds)")
+            //print("new count: \(count) new total: \(total) new X: \(newX) \n")
+//            print("ongoing class, new progress X: \(newX)")
+            
+            if !timerIsRunning {
+                startTime = Date().timeIntervalSinceReferenceDate
+                timerCount = Double(count)
+                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
+                timerIsRunning = true
+            }
 
-            UIView.animate(withDuration: 30, animations: {
+            UIView.animate(withDuration: 5, animations: {
                 self.progressBarView.frame = CGRect(x: newX, y: 0, width: self.contentView.frame.size.width, height: self.contentView.frame.size.height)
                 self.layoutIfNeeded()
             }, completion: { (finished: Bool) in
-                DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                     self.updateProgress()
                 }
                 
@@ -128,18 +146,36 @@ class classPreviewView: UIView {
             
         }
         else if hour < startHour || hour == startHour && minutes < startMin {
+            print("waiting for class to start, polling")
             progressBarView.backgroundColor = UIColor.clear
+            hideProgressConstraint.isActive=true
             DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
                 self.updateProgress()
             }
         }
         else {
             print("this class is ova")
-            contentView.addConstraint(barRightLeft)
+            //contentView.addConstraint(barRightLeft)
+            
+            countLabel.text = ""
+            hideProgressConstraint.isActive=true
             compactViewDelegate?.updateCompactClasses()
             // this was to change the coomit
             print("dpes this commiot")
         }
+    }
+    
+    @objc func updateTimer() {
+        timerCount -= 1
+        if timerCount < 0 {
+            timer.invalidate()
+            timerIsRunning = false
+            print("timer reached 0")
+        }
+        else {
+            countLabel.text = String(Int(timerCount))
+        }
+        
     }
     
 }
