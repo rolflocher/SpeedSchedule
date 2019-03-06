@@ -55,13 +55,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             upcomingDayView.layoutClasses(classList:classListGlobal)
             switch deviceSize {
             case 667.0 :
-                print("unwritten size")
+                print("unwritten size \(deviceSize)")
             case 736.0 :
-                print("unwritten size")
+                scheduleView.height = 424
+                scheduleView.width = 70.5
             case 568.0 :
-                print("unwritten size")
+                print("unwritten size \(deviceSize)")
             case 812.0 :
-                print("unwritten size")
+                print("unwritten size \(deviceSize)")
             case 896.0 :
                 scheduleView.height = 400
                 scheduleView.width = 70.5
@@ -261,7 +262,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         case 667.0 :
             print("unwritten size")
         case 736.0 :
-            print("unwritten size")
+            usableHeight = 424.0
         case 568.0 :
             print("unwritten size")
         case 812.0 :
@@ -379,16 +380,16 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 print("f")
             }
             textLayer.alignmentMode = .right
-            if (deviceSize == 667.0) {
+            if (deviceSize == 667.0) { //unknown
                 textLayer.position = CGPoint(x:2,y:height+220)
             }
             else if (deviceSize == 736.0) {
-                textLayer.position = CGPoint(x:-3,y:height+253)
+                textLayer.position = CGPoint(x:15,y:height+168)
             }
-            else if (deviceSize == 568.0) {
+            else if (deviceSize == 568.0) { //unknown
                 textLayer.position = CGPoint(x:7,y:height+173)
             }
-            else if (deviceSize == 812.0) {
+            else if (deviceSize == 812.0) { //unknown
                 textLayer.position = CGPoint(x:2,y:height+261)
             }
             else if (deviceSize == 896.0) {

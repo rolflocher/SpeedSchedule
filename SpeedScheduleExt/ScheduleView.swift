@@ -77,10 +77,10 @@ class ScheduleView: UIView {
             let classEndMin = classInfo["endMin"] as! Int
             
             let dayOffset = 2*CGFloat(self.endHour-self.startHour) + CGFloat(self.endMin-self.startMin)/30
-            let classStartOffset = 2*(classStartHour-self.startHour)+(classStartMin - self.startMin)/30
+            let classStartOffset = 2*(classStartHour-self.startHour)+(self.startMin - classStartMin)/30//(classStartMin - self.startMin)/30
             let classEndOffset = 2*CGFloat(self.endHour-classEndHour)+CGFloat(self.endMin - classEndMin)/30
-            let classStartPixel = CGFloat(self.height) * (CGFloat(classStartOffset)/CGFloat(dayOffset))
-            let classEndPixel = CGFloat(self.height) * (CGFloat(dayOffset-classEndOffset)/CGFloat(dayOffset)) // classEndOffset)/CGFloat(dayOffset+1))
+            let classStartPixel = CGFloat(self.height) * (CGFloat(classStartOffset)/CGFloat(dayOffset+1))
+            let classEndPixel = CGFloat(self.height) * (CGFloat(dayOffset-classEndOffset)/CGFloat(dayOffset+1)) // classEndOffset)/CGFloat(dayOffset+1))
             let newHeight = classEndPixel-classStartPixel
             
 //            let classFrame = ClassView(frame: CGRect(x: 0,y: classStartPixel, width: self.mondayLongView.frame.size.width,height: newHeight))
