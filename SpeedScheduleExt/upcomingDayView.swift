@@ -196,9 +196,23 @@ class upcomingDayView: UIView, CompactViewDelegate {
         }
         else {
             print("theres no more classes today")
-            classPreviewView.backgroundColor = UIColor.clear
+            classPreviewView.contentView.backgroundColor = UIColor.clear
+            classPreviewView.nameLabel.text = ""
+            classPreviewView.timeLabel.text = ""
+            classPreviewView.countLabel.text = ""
+            classPreviewView.roomLabel.text = ""
+            
             classPreviewView1.contentView.backgroundColor = UIColor.clear
+            classPreviewView1.nameLabel.text = ""
+            classPreviewView1.timeLabel.text = ""
+            classPreviewView1.countLabel.text = ""
+            classPreviewView1.roomLabel.text = ""
+            
             classPreviewView2.contentView.backgroundColor = UIColor.clear
+            classPreviewView2.nameLabel.text = ""
+            classPreviewView2.timeLabel.text = ""
+            classPreviewView2.countLabel.text = ""
+            classPreviewView2.roomLabel.text = ""
         }
         
         
