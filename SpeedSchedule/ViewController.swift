@@ -8,6 +8,8 @@
 
 import UIKit
 import SpriteKit
+import Intents
+
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -66,7 +68,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var heightButton: UIButton!
     
     @IBAction func heightButtonPressed(_ sender: Any) {
-        print("height button pressed")
+        INPreferences.requestSiriAuthorization { status in
+            if status == .authorized {
+                print("Hey, Siri!")
+            } else {
+                print("Nay, Siri!")
+            }
+        }
+        let intent = WhatClassIntent()
+        
+        intent.suggestedInvocationPhrase = "What is my next class"
+        
+        let interaction = INInteraction(intent: intent, response: nil)
+        
+        interaction.donate { (error) in
+            if error != nil {
+                if let error = error as NSError? {
+                    print(error)
+                } else {
+                    print("successful donate")
+                }
+            }
+        }
     }
     
     @IBOutlet var cropButton: UIButton!

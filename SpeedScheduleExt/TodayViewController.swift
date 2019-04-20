@@ -26,7 +26,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet var fridayView: UIView!
     
     @IBOutlet var upcomingDayView: upcomingDayView!
-    
+        
     
     var startHour = 8
     var startMin = 30
@@ -41,6 +41,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
         self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         deviceSize = UIScreen.main.bounds.height
         print("Device height: \(deviceSize)")

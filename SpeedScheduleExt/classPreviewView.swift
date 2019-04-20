@@ -115,7 +115,7 @@ class classPreviewView: UIView {
                 progressBarView.backgroundColor = UIColor.green
             }
             
-            
+            self.layoutIfNeeded()
             
             let count = 60*60*(endHour - hour) + 60*(endMin-minutes) - seconds
             
@@ -134,11 +134,11 @@ class classPreviewView: UIView {
                 timerIsRunning = true
             }
 
-            UIView.animate(withDuration: 5, animations: {
+            UIView.animate(withDuration: 1, animations: {
                 self.progressBarView.frame = CGRect(x: newX, y: 0, width: self.contentView.frame.size.width, height: self.contentView.frame.size.height)
                 self.layoutIfNeeded()
             }, completion: { (finished: Bool) in
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     self.updateProgress()
                 }
                 

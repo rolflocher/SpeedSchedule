@@ -35,6 +35,8 @@ class upcomingDayView: UIView, CompactViewDelegate {
     
     @IBOutlet var classPreviewView2: classPreviewView!
     
+    @IBOutlet var noClassLabel: UILabel!
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -112,6 +114,8 @@ class upcomingDayView: UIView, CompactViewDelegate {
                 }
             }
             
+            self.noClassLabel.isHidden=true
+            
             classPreviewView.drawInfo(classInfo: firstClass)
             classPreviewView.updateProgress()
             classPreviewView.progressBarView.backgroundColor = UIColor.green
@@ -147,6 +151,8 @@ class upcomingDayView: UIView, CompactViewDelegate {
                     secondClass = classX
                 }
             }
+            
+            self.noClassLabel.isHidden=true
             
             classPreviewView.drawInfo(classInfo: firstClass)
             classPreviewView1.drawInfo(classInfo: secondClass)
@@ -184,6 +190,8 @@ class upcomingDayView: UIView, CompactViewDelegate {
                 }
             }
             
+            self.noClassLabel.isHidden=true
+            
             classPreviewView.drawInfo(classInfo: firstClass)
             classPreviewView1.drawInfo(classInfo: secondClass)
             classPreviewView2.drawInfo(classInfo: thirdClass)
@@ -196,6 +204,9 @@ class upcomingDayView: UIView, CompactViewDelegate {
         }
         else {
             print("theres no more classes today")
+            
+            self.noClassLabel.isHidden=false
+            
             classPreviewView.contentView.backgroundColor = UIColor.clear
             classPreviewView.nameLabel.text = ""
             classPreviewView.timeLabel.text = ""

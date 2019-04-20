@@ -124,9 +124,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaA-my-xLa">
-                                <rect key="frame" x="132" y="228" width="111" height="33"/>
+                                <rect key="frame" x="150.5" y="228" width="74" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Widget Height">
+                                <state key="normal" title="Setup Siri">
                                     <color key="titleColor" red="0.31346191750000002" green="0.31346191750000002" blue="0.31346191750000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>

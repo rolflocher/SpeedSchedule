@@ -14,6 +14,44 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>WhatClass.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>WhatClassIntent.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>4C4023B721F818EC0069F61E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C4023CB21F818EF0069F61E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C4023D621F818EF0069F61E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C4F807621FA969900109434</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C9BF6F122343CCC00987A4E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

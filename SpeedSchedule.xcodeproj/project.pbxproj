@@ -23,6 +23,12 @@
 		4C4F808021FA969900109434 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C4F807E21FA969900109434 /* MainInterface.storyboard */; };
 		4C4F808421FA969900109434 /* SpeedScheduleExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4C4F807721FA969900109434 /* SpeedScheduleExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4C4F808A21FA987F00109434 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4023C221F818EE0069F61E /* Assets.xcassets */; };
+		4C9BF6F522343CCC00987A4E /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9BF6F422343CCC00987A4E /* IntentHandler.swift */; };
+		4C9BF6F922343CCC00987A4E /* WhatClassIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4C9BF6F222343CCC00987A4E /* WhatClassIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4C9BF6FE22343D4800987A4E /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 4C9BF6FD22343D4800987A4E /* Intents.intentdefinition */; };
+		4C9BF6FF22343D7700987A4E /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 4C9BF6FD22343D4800987A4E /* Intents.intentdefinition */; };
+		4C9BF70122343EFF00987A4E /* WhatClassIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9BF70022343EFF00987A4E /* WhatClassIntentHandler.swift */; };
+		4C9BF7052234591F00987A4E /* WhatClassIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9BF70022343EFF00987A4E /* WhatClassIntentHandler.swift */; };
 		4CB774682229E11C00648901 /* upcomingDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB774672229E11C00648901 /* upcomingDayView.swift */; };
 		4CB7746A2229E13000648901 /* upcomingDayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB774692229E13000648901 /* upcomingDayView.xib */; };
 		4CB7746C2229E25600648901 /* classPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB7746B2229E25600648901 /* classPreviewView.swift */; };
@@ -58,6 +64,13 @@
 			remoteGlobalIDString = 4C4F807621FA969900109434;
 			remoteInfo = SpeedScheduleExt;
 		};
+		4C9BF6F722343CCC00987A4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C4023B021F818EC0069F61E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C9BF6F122343CCC00987A4E;
+			remoteInfo = WhatClassIntent;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +80,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				4C9BF6F922343CCC00987A4E /* WhatClassIntent.appex in Embed App Extensions */,
 				4C4F808421FA969900109434 /* SpeedScheduleExt.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -97,6 +111,13 @@
 		4C4F807C21FA969900109434 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		4C4F807F21FA969900109434 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		4C4F808121FA969900109434 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C9BF6E322343CAB00987A4E /* WhatClass.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WhatClass.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C9BF6F222343CCC00987A4E /* WhatClassIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WhatClassIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C9BF6F422343CCC00987A4E /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		4C9BF6F622343CCC00987A4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C9BF6FD22343D4800987A4E /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		4C9BF70022343EFF00987A4E /* WhatClassIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatClassIntentHandler.swift; sourceTree = "<group>"; };
+		4C9BF70322344DE600987A4E /* WhatClassIntent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhatClassIntent.entitlements; sourceTree = "<group>"; };
 		4C9EC65622205604007E49BD /* ClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassView.swift; sourceTree = "<group>"; };
 		4CB774672229E11C00648901 /* upcomingDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = upcomingDayView.swift; sourceTree = "<group>"; };
 		4CB774692229E13000648901 /* upcomingDayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = upcomingDayView.xib; sourceTree = "<group>"; };
@@ -140,6 +161,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4C9BF6E022343CAB00987A4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C9BF6EF22343CCC00987A4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -152,6 +187,7 @@
 				4C4023CF21F818EF0069F61E /* SpeedScheduleTests */,
 				4C4023DA21F818EF0069F61E /* SpeedScheduleUITests */,
 				4C4F807B21FA969900109434 /* SpeedScheduleExt */,
+				4C9BF6F322343CCC00987A4E /* WhatClassIntent */,
 				4C4F807821FA969900109434 /* Frameworks */,
 				4C4023B921F818EC0069F61E /* Products */,
 			);
@@ -164,6 +200,8 @@
 				4C4023CC21F818EF0069F61E /* SpeedScheduleTests.xctest */,
 				4C4023D721F818EF0069F61E /* SpeedScheduleUITests.xctest */,
 				4C4F807721FA969900109434 /* SpeedScheduleExt.appex */,
+				4C9BF6E322343CAB00987A4E /* WhatClass.appex */,
+				4C9BF6F222343CCC00987A4E /* WhatClassIntent.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,6 +221,8 @@
 				4CC785A52225F887008D53E5 /* fonts */,
 				4C4023C421F818EE0069F61E /* LaunchScreen.storyboard */,
 				4C4023C721F818EE0069F61E /* Info.plist */,
+				4C9BF6FD22343D4800987A4E /* Intents.intentdefinition */,
+				4C9BF70022343EFF00987A4E /* WhatClassIntentHandler.swift */,
 			);
 			path = SpeedSchedule;
 			sourceTree = "<group>";
@@ -230,6 +270,16 @@
 			path = SpeedScheduleExt;
 			sourceTree = "<group>";
 		};
+		4C9BF6F322343CCC00987A4E /* WhatClassIntent */ = {
+			isa = PBXGroup;
+			children = (
+				4C9BF70322344DE600987A4E /* WhatClassIntent.entitlements */,
+				4C9BF6F422343CCC00987A4E /* IntentHandler.swift */,
+				4C9BF6F622343CCC00987A4E /* Info.plist */,
+			);
+			path = WhatClassIntent;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,6 +296,7 @@
 			);
 			dependencies = (
 				4C4F808321FA969900109434 /* PBXTargetDependency */,
+				4C9BF6F822343CCC00987A4E /* PBXTargetDependency */,
 			);
 			name = SpeedSchedule;
 			productName = SpeedSchedule;
@@ -305,6 +356,40 @@
 			productReference = 4C4F807721FA969900109434 /* SpeedScheduleExt.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		4C9BF6E222343CAB00987A4E /* WhatClass */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C9BF6EB22343CAB00987A4E /* Build configuration list for PBXNativeTarget "WhatClass" */;
+			buildPhases = (
+				4C9BF6DF22343CAB00987A4E /* Sources */,
+				4C9BF6E022343CAB00987A4E /* Frameworks */,
+				4C9BF6E122343CAB00987A4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WhatClass;
+			productName = WhatClass;
+			productReference = 4C9BF6E322343CAB00987A4E /* WhatClass.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		4C9BF6F122343CCC00987A4E /* WhatClassIntent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C9BF6FA22343CCC00987A4E /* Build configuration list for PBXNativeTarget "WhatClassIntent" */;
+			buildPhases = (
+				4C9BF6EE22343CCC00987A4E /* Sources */,
+				4C9BF6EF22343CCC00987A4E /* Frameworks */,
+				4C9BF6F022343CCC00987A4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WhatClassIntent;
+			productName = WhatClassIntent;
+			productReference = 4C9BF6F222343CCC00987A4E /* WhatClassIntent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -321,6 +406,12 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.Siri = {
+								enabled = 1;
+							};
 						};
 					};
 					4C4023CB21F818EF0069F61E = {
@@ -332,6 +423,17 @@
 						TestTargetID = 4C4023B721F818EC0069F61E;
 					};
 					4C4F807621FA969900109434 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					4C9BF6E222343CAB00987A4E = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					4C9BF6F122343CCC00987A4E = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -358,6 +460,8 @@
 				4C4023CB21F818EF0069F61E /* SpeedScheduleTests */,
 				4C4023D621F818EF0069F61E /* SpeedScheduleUITests */,
 				4C4F807621FA969900109434 /* SpeedScheduleExt */,
+				4C9BF6E222343CAB00987A4E /* WhatClass */,
+				4C9BF6F122343CCC00987A4E /* WhatClassIntent */,
 			);
 		};
 /* End PBXProject section */
@@ -404,6 +508,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4C9BF6E122343CAB00987A4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C9BF6F022343CCC00987A4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -411,6 +529,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C9BF70122343EFF00987A4E /* WhatClassIntentHandler.swift in Sources */,
+				4C9BF6FE22343D4800987A4E /* Intents.intentdefinition in Sources */,
 				4C2D524C2220B69D005F1857 /* MenuView.swift in Sources */,
 				4CC785AF2225FD77008D53E5 /* ClassView.swift in Sources */,
 				4CF4A74122009F4E0054B30B /* ScheduleViewController.swift in Sources */,
@@ -447,6 +567,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4C9BF6DF22343CAB00987A4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C9BF6EE22343CCC00987A4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C9BF6FF22343D7700987A4E /* Intents.intentdefinition in Sources */,
+				4C9BF6F522343CCC00987A4E /* IntentHandler.swift in Sources */,
+				4C9BF7052234591F00987A4E /* WhatClassIntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -464,6 +601,11 @@
 			isa = PBXTargetDependency;
 			target = 4C4F807621FA969900109434 /* SpeedScheduleExt */;
 			targetProxy = 4C4F808221FA969900109434 /* PBXContainerItemProxy */;
+		};
+		4C9BF6F822343CCC00987A4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C9BF6F122343CCC00987A4E /* WhatClassIntent */;
+			targetProxy = 4C9BF6F722343CCC00987A4E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -624,7 +766,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = rolflocher.SpeedSchedule;
+				PRODUCT_BUNDLE_IDENTIFIER = rolflocher.ScheduleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -644,7 +786,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = rolflocher.SpeedSchedule;
+				PRODUCT_BUNDLE_IDENTIFIER = rolflocher.ScheduleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -741,7 +883,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = rolflocher.SpeedSchedule.SpeedScheduleExt;
+				PRODUCT_BUNDLE_IDENTIFIER = rolflocher.ScheduleApp.SpeedScheduleExt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -761,7 +903,85 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = rolflocher.SpeedSchedule.SpeedScheduleExt;
+				PRODUCT_BUNDLE_IDENTIFIER = rolflocher.ScheduleApp.SpeedScheduleExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4C9BF6EC22343CAB00987A4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UX7GPB828A;
+				INFOPLIST_FILE = WhatClass/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rolflocher.ScheduleApp.WhatClass;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4C9BF6ED22343CAB00987A4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UX7GPB828A;
+				INFOPLIST_FILE = WhatClass/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rolflocher.ScheduleApp.WhatClass;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4C9BF6FB22343CCC00987A4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WhatClassIntent/WhatClassIntent.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UX7GPB828A;
+				INFOPLIST_FILE = WhatClassIntent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rolflocher.ScheduleApp.WhatClassIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4C9BF6FC22343CCC00987A4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WhatClassIntent/WhatClassIntent.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UX7GPB828A;
+				INFOPLIST_FILE = WhatClassIntent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rolflocher.ScheduleApp.WhatClassIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -813,6 +1033,24 @@
 			buildConfigurations = (
 				4C4F808521FA969900109434 /* Debug */,
 				4C4F808621FA969900109434 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C9BF6EB22343CAB00987A4E /* Build configuration list for PBXNativeTarget "WhatClass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C9BF6EC22343CAB00987A4E /* Debug */,
+				4C9BF6ED22343CAB00987A4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C9BF6FA22343CCC00987A4E /* Build configuration list for PBXNativeTarget "WhatClassIntent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C9BF6FB22343CCC00987A4E /* Debug */,
+				4C9BF6FC22343CCC00987A4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
